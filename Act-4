@@ -4,8 +4,8 @@ using namespace std;
 int main()
 {
     vector<int> numeros = {1, 2, 3, 4, 5};
-    vector<int> secuencia = {6, 2, 8, 9, 5};
-    int final[5];
+    vector<int> secuencia = {6, 2, 8, 4, 9};
+    vector<int> final = {0, 0, 0, 0, 0};
     for(int i = 0; i < 5; i++)
     {
         if(numeros[i] == secuencia[i])
@@ -13,12 +13,16 @@ int main()
             final[i] = numeros[i];
         }
     }
-    cout << "Los numeros sin repetir son: ";
+    cout << "La interseccion es: ";
     for(int j = 0; j < 5; j++)
     {
-        if(final[j] != 0)
+        if(final[j] == 0)
         {
-            cout << final[j] << ", ";
+            j++;
+            if(final[j] != 0)
+            {
+                cout << final[j] << ", ";
+            }
         }
     }
     return 0;
